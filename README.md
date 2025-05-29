@@ -59,4 +59,4 @@ File Structure:
 ```
 - All code should be in the code folder 
 
-Here is the rendered html: [homework3_link]http://localhost:5857
+Here is the rendered html: file:///Users/katefrankland/ENVS-193DS/homework3/homework3/code/homework_3.html
