@@ -1,8 +1,17 @@
 ---
-title: "homework3"
-format: html
-editor: visual
-link: https://github.com/katefrankland/homework3.git
+title: "ENVS-193DS_homework-03"
+author: "Kate Frankland"
+date: "2025-05-28"
+format:
+  html:
+    toc: true
+execute:
+  message: false
+  warning: false
+---
+ [https://github.com/katefrankland/homework3.git](https://github.com/katefrankland/homework3.git)
+
+
 ---
 
 ```{r, message = FALSE}
@@ -58,7 +67,6 @@ below_avg_caloric_intake <- personal_data %>%
   filter(caloric_intake < mean_calories) # creating a new data set where caloric intake is below average
 ```
 
-
 ```{r}
 #group sleep data 
 personal_data <- personal_data %>% 
@@ -75,7 +83,6 @@ personal_data <- personal_data %>%
                                  "Below Average Calories")) # If caloric intake is lower than the mean calories, it will be FALSE and labeled as "Below Average Calories"
 ```
 
-
 ```{r}
 # summarize by group 
 sleep_summary <- personal_data %>% # create sleep_summary table 
@@ -89,7 +96,6 @@ caloric_summary <- personal_data %>%
   summarize(mean_miles_ran = mean(miles_ran, # calculate the mean of miles_ran between groups 
                                   na.rm = TRUE)) # ignoring any NA values 
 ```
-
 
 ```{r}
 clean_data <- personal_data %>%
@@ -124,7 +130,6 @@ ggplot(personal_data, #create the plot using personal data
 
 caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.
 
-```{r}
 ```{r}
 ggplot(personal_data, # using personal data 
        aes(x = caloric_group, # set the x axis to caloric group 
@@ -163,8 +168,6 @@ summary_table <- personal_data %>%
             .groups = "drop") 
 ```
 
-
-```{r}
 ```{r}
 # Use gt to create the table
 summary_table %>%
@@ -201,21 +204,20 @@ For my personal data, I believe that an affective visualization could look like 
 
 For my visualization, I took inspiration from Stefanie Posavec and Giorgia Lupi’s Dear Data project. I created a postcard-style design similar to that ot the Dear Data project that uses different shapes and colors to represent key aspects of my data. For example, a circle indicates a day when I did not run, while a square represents a running day. A green line beneath some squares highlights days when I ran more than my average of 2.8 miles. The colors inside the shapes reflect whether my caloric intake was above or below average. I chose this format because it reminds me of a bullet journal, offering a personal and creative way to track my running, nutrition, and mileage.
 
-Problem 3 
+Problem 3
 
-(a) Revisit and Summarize 
+(a) Revisit and Summarize
 
-![Statistical Critique Figure](Figure_3_ES193_Statistical_Critique.png)
-A multiple linear regression is used; the response variable is the dolphin encounter rate which is measured as the number of dolphins per kilometer surveyed. The predictor variables are the water temperature (C), salinity (ppt), and the interaction between the water temperature and salinity.
+![Statistical Critique Figure](Figure_3_ES193_Statistical_Critique.png) A multiple linear regression is used; the response variable is the dolphin encounter rate which is measured as the number of dolphins per kilometer surveyed. The predictor variables are the water temperature (C), salinity (ppt), and the interaction between the water temperature and salinity.
 
-(b) Visual Clarity 
+(b) Visual Clarity
 
 Figure 3 on this critique has clear axes displaying temperature vs predicted encounter rates, and salinity vs predicted encounter rates (dolphins/km), with a breakpoint line at 23.37 degrees Celsius. The axes are positioned logically, and the solid lines for model predictions are clearly visible. However, there is an absense of confidence intervals and summary statistics that could be insightful for the reader to assess the fit of the model.
 
-(c) Aesthetic Clarity 
+(c) Aesthetic Clarity
 
-I would describe this figure as having a high data to ink ratio. The figure is minimal, but some key components are difficult to see and understand. For example, each tick on the x axis represents an observation, but the tick marks are very small, making it challenging to get a full idea of the amount of observations that were collected. Additional small details that should be considered include the font size on the axes, which makes the figure difficult to read. 
+I would describe this figure as having a high data to ink ratio. The figure is minimal, but some key components are difficult to see and understand. For example, each tick on the x axis represents an observation, but the tick marks are very small, making it challenging to get a full idea of the amount of observations that were collected. Additional small details that should be considered include the font size on the axes, which makes the figure difficult to read.
 
-(d) Recommendations 
+(d) Recommendations
 
-Recommendations I have to enhance this figure could be to overlay raw data points and 95% confidence interval bands on the regression lines, which could better illustrate the data distribution and model uncertainty. A redesign of the figure as a heatmap could help the reader have an enhanced visual understanding of the relationship between temperature and interactions. Lastly, the readability of the figure could also be improved by increasing axes label fonts, making the tick marks larger, and labeling the intervals more clearly. 
+Recommendations I have to enhance this figure could be to overlay raw data points and 95% confidence interval bands on the regression lines, which could better illustrate the data distribution and model uncertainty. A redesign of the figure as a heatmap could help the reader have an enhanced visual understanding of the relationship between temperature and interactions. Lastly, the readability of the figure could also be improved by increasing axes label fonts, making the tick marks larger, and labeling the intervals more clearly.
