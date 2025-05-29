@@ -77,7 +77,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link active" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  </ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -123,7 +131,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Problem 1</p>
+<section id="problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
 <ol type="a">
 <li>Data Summarizing</li>
 </ol>
@@ -226,7 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.</p>
+<ol start="3" type="a">
+<li>caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.</li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(personal_data, <span class="co"># using personal data </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> caloric_group, <span class="co"># set the x axis to caloric group </span></span>
@@ -262,7 +273,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.</p>
+<ol start="3" type="a">
+<li>caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.</li>
+</ol>
+<ol start="4" type="a">
+<li>Table Presentation</li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> personal_data <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sleep_group, caloric_group) <span class="sc">%&gt;%</span> </span>
@@ -287,23 +303,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="xjaepdopvu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xjaepdopvu table {
+<div id="yxpevvknoh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yxpevvknoh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xjaepdopvu thead, #xjaepdopvu tbody, #xjaepdopvu tfoot, #xjaepdopvu tr, #xjaepdopvu td, #xjaepdopvu th {
+#yxpevvknoh thead, #yxpevvknoh tbody, #yxpevvknoh tfoot, #yxpevvknoh tr, #yxpevvknoh td, #yxpevvknoh th {
   border-style: none;
 }
 
-#xjaepdopvu p {
+#yxpevvknoh p {
   margin: 0;
   padding: 0;
 }
 
-#xjaepdopvu .gt_table {
+#yxpevvknoh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -329,12 +345,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_caption {
+#yxpevvknoh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xjaepdopvu .gt_title {
+#yxpevvknoh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -346,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#xjaepdopvu .gt_subtitle {
+#yxpevvknoh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -358,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#xjaepdopvu .gt_heading {
+#yxpevvknoh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -370,13 +386,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_bottom_border {
+#yxpevvknoh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_col_headings {
+#yxpevvknoh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -391,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_col_heading {
+#yxpevvknoh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -411,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xjaepdopvu .gt_column_spanner_outer {
+#yxpevvknoh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -423,15 +439,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#xjaepdopvu .gt_column_spanner_outer:first-child {
+#yxpevvknoh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xjaepdopvu .gt_column_spanner_outer:last-child {
+#yxpevvknoh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xjaepdopvu .gt_column_spanner {
+#yxpevvknoh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -443,11 +459,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#xjaepdopvu .gt_spanner_row {
+#yxpevvknoh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xjaepdopvu .gt_group_heading {
+#yxpevvknoh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -473,7 +489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#xjaepdopvu .gt_empty_group_heading {
+#yxpevvknoh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -488,15 +504,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#xjaepdopvu .gt_from_md > :first-child {
+#yxpevvknoh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xjaepdopvu .gt_from_md > :last-child {
+#yxpevvknoh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xjaepdopvu .gt_row {
+#yxpevvknoh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -515,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xjaepdopvu .gt_stub {
+#yxpevvknoh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -528,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xjaepdopvu .gt_stub_row_group {
+#yxpevvknoh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -542,15 +558,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#xjaepdopvu .gt_row_group_first td {
+#yxpevvknoh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xjaepdopvu .gt_row_group_first th {
+#yxpevvknoh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xjaepdopvu .gt_summary_row {
+#yxpevvknoh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -560,16 +576,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xjaepdopvu .gt_first_summary_row {
+#yxpevvknoh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_first_summary_row.thick {
+#yxpevvknoh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xjaepdopvu .gt_last_summary_row {
+#yxpevvknoh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -579,7 +595,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_grand_summary_row {
+#yxpevvknoh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -589,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xjaepdopvu .gt_first_grand_summary_row {
+#yxpevvknoh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -599,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_last_grand_summary_row_top {
+#yxpevvknoh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -609,11 +625,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_striped {
+#yxpevvknoh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xjaepdopvu .gt_table_body {
+#yxpevvknoh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -622,7 +638,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_footnotes {
+#yxpevvknoh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -636,7 +652,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_footnote {
+#yxpevvknoh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -645,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xjaepdopvu .gt_sourcenotes {
+#yxpevvknoh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -659,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xjaepdopvu .gt_sourcenote {
+#yxpevvknoh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -667,72 +683,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xjaepdopvu .gt_left {
+#yxpevvknoh .gt_left {
   text-align: left;
 }
 
-#xjaepdopvu .gt_center {
+#yxpevvknoh .gt_center {
   text-align: center;
 }
 
-#xjaepdopvu .gt_right {
+#yxpevvknoh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xjaepdopvu .gt_font_normal {
+#yxpevvknoh .gt_font_normal {
   font-weight: normal;
 }
 
-#xjaepdopvu .gt_font_bold {
+#yxpevvknoh .gt_font_bold {
   font-weight: bold;
 }
 
-#xjaepdopvu .gt_font_italic {
+#yxpevvknoh .gt_font_italic {
   font-style: italic;
 }
 
-#xjaepdopvu .gt_super {
+#yxpevvknoh .gt_super {
   font-size: 65%;
 }
 
-#xjaepdopvu .gt_footnote_marks {
+#yxpevvknoh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xjaepdopvu .gt_asterisk {
+#yxpevvknoh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xjaepdopvu .gt_indent_1 {
+#yxpevvknoh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xjaepdopvu .gt_indent_2 {
+#yxpevvknoh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xjaepdopvu .gt_indent_3 {
+#yxpevvknoh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xjaepdopvu .gt_indent_4 {
+#yxpevvknoh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xjaepdopvu .gt_indent_5 {
+#yxpevvknoh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xjaepdopvu .katex-display {
+#yxpevvknoh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xjaepdopvu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yxpevvknoh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -776,7 +792,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Problem 2</p>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
 <ol type="a">
 <li>Describe in words when an affective visualization could look like for your personal data</li>
 </ol>
@@ -803,7 +821,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Artist Statement</li>
 </ol>
 <p>For my visualization, I took inspiration from Stefanie Posavec and Giorgia Lupi’s Dear Data project. I created a postcard-style design similar to that ot the Dear Data project that uses different shapes and colors to represent key aspects of my data. For example, a circle indicates a day when I did not run, while a square represents a running day. A green line beneath some squares highlights days when I ran more than my average of 2.8 miles. The colors inside the shapes reflect whether my caloric intake was above or below average. I chose this format because it reminds me of a bullet journal, offering a personal and creative way to track my running, nutrition, and mileage.</p>
-<p>Problem 3</p>
+</section>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
 <ol type="a">
 <li>Revisit and Summarize</li>
 </ol>
@@ -820,6 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Recommendations</li>
 </ol>
 <p>Recommendations I have to enhance this figure could be to overlay raw data points and 95% confidence interval bands on the regression lines, which could better illustrate the data distribution and model uncertainty. A redesign of the figure as a heatmap could help the reader have an enhanced visual understanding of the relationship between temperature and interactions. Lastly, the readability of the figure could also be improved by increasing axes label fonts, making the tick marks larger, and labeling the intervals more clearly.</p>
+</section>
 
 </main>
 <!-- /main column -->

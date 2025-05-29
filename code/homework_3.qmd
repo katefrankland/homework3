@@ -11,7 +11,6 @@ execute:
 ---
  [https://github.com/katefrankland/homework3.git](https://github.com/katefrankland/homework3.git)
 
-
 ---
 
 ```{r, message = FALSE}
@@ -24,15 +23,15 @@ library(readxl)
 library(ggplot2)
 ```
 
-Problem 1
+### Problem 1
 
-(a) Data Summarizing
+ (a) Data Summarizing
 
 For my data, I am interested in my response variable of the amount of miles ran, and how my mileage is influenced by the explanatory variables of caloric intake and sleep duration. I would like to take the mean of each of these explanatory variables, and then use the mean to determine levels of lower than average or higher than average caloric intake or sleep duration. I would then calculate the mean number of miles ran for each group.
 
 This comparison is informative as it could help me gauge the conditions under which I perform best, and help me further understand how fueling and rest influence my running performance.
 
-(b) Visualization
+ (b) Visualization
 
 ```{r, message = FALSE}
 #cleaning data 
@@ -128,7 +127,7 @@ ggplot(personal_data, #create the plot using personal data
         ) 
 ```
 
-caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.
+ (c) caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.
 
 ```{r}
 ggplot(personal_data, # using personal data 
@@ -159,8 +158,9 @@ ggplot(personal_data, # using personal data
         ) 
 ```
 
-caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.
+ (c) caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.
 
+ d) Table Presentation
 ```{r}
 summary_table <- personal_data %>%
   group_by(sleep_group, caloric_group) %>% 
@@ -186,38 +186,38 @@ summary_table %>%
   )
 ```
 
-Problem 2
+### Problem 2
 
-(a) Describe in words when an affective visualization could look like for your personal data
+ (a) Describe in words when an affective visualization could look like for your personal data
 
 For my personal data, I believe that an affective visualization could look like a weekly timeline or calendar, with each day a different shape depending on if I ran or not; another option would be to have the days in the shapes of clouds or suns depending on the weather outside. Considering that I am using sleep and caloric intake to understand my mileage, a visualization using a color or heat gradient could be used as well to better understand the relationship between sleep, calorie intake, and performance, creating a visualization that is more visually engaging.
 
-(b) Create a sketch (on paper) of your idea
+ (b) Create a sketch (on paper) of your idea
 
 ![Visual Data Sketch](visualdata_sketch.png)
 
-(c) Draft of visualization
+ (c) Draft of visualization
 
 ![Sketch of Affective Visualization](visualdata.png)
 
-(d) Artist Statement
+ (d) Artist Statement
 
 For my visualization, I took inspiration from Stefanie Posavec and Giorgia Lupi’s Dear Data project. I created a postcard-style design similar to that ot the Dear Data project that uses different shapes and colors to represent key aspects of my data. For example, a circle indicates a day when I did not run, while a square represents a running day. A green line beneath some squares highlights days when I ran more than my average of 2.8 miles. The colors inside the shapes reflect whether my caloric intake was above or below average. I chose this format because it reminds me of a bullet journal, offering a personal and creative way to track my running, nutrition, and mileage.
 
-Problem 3
+### Problem 3
 
-(a) Revisit and Summarize
+ (a) Revisit and Summarize
 
 ![Statistical Critique Figure](Figure_3_ES193_Statistical_Critique.png) A multiple linear regression is used; the response variable is the dolphin encounter rate which is measured as the number of dolphins per kilometer surveyed. The predictor variables are the water temperature (C), salinity (ppt), and the interaction between the water temperature and salinity.
 
-(b) Visual Clarity
+ (b) Visual Clarity
 
 Figure 3 on this critique has clear axes displaying temperature vs predicted encounter rates, and salinity vs predicted encounter rates (dolphins/km), with a breakpoint line at 23.37 degrees Celsius. The axes are positioned logically, and the solid lines for model predictions are clearly visible. However, there is an absense of confidence intervals and summary statistics that could be insightful for the reader to assess the fit of the model.
 
-(c) Aesthetic Clarity
+ (c) Aesthetic Clarity
 
 I would describe this figure as having a high data to ink ratio. The figure is minimal, but some key components are difficult to see and understand. For example, each tick on the x axis represents an observation, but the tick marks are very small, making it challenging to get a full idea of the amount of observations that were collected. Additional small details that should be considered include the font size on the axes, which makes the figure difficult to read.
 
-(d) Recommendations
+ (d) Recommendations
 
 Recommendations I have to enhance this figure could be to overlay raw data points and 95% confidence interval bands on the regression lines, which could better illustrate the data distribution and model uncertainty. A redesign of the figure as a heatmap could help the reader have an enhanced visual understanding of the relationship between temperature and interactions. Lastly, the readability of the figure could also be improved by increasing axes label fonts, making the tick marks larger, and labeling the intervals more clearly.
