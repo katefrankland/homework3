@@ -192,3 +192,7 @@ For my personal data, I believe that an affective visualization could look like 
 (c) Draft of visualization
 
 ![Sketch of Affective Visualization](visualdata.png)
+
+(d) Artist Statement
+
+For my visualization, I took inspiration from Stefanie Posavec and Giorgia Lupi’s Dear Data project. I created a postcard-style design similar to that ot the Dear Data project that uses different shapes and colors to represent key aspects of my data. For example, a circle indicates a day when I did not run, while a square represents a running day. A green line beneath some squares highlights days when I ran more than my average of 2.8 miles. The colors inside the shapes reflect whether my caloric intake was above or below average. I chose this format because it reminds me of a bullet journal, offering a personal and creative way to track my running, nutrition, and mileage.
