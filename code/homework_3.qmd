@@ -153,4 +153,29 @@ ggplot(personal_data, # using personal data
 
 caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.
 
+```{r}
+```{r}
+# Create a summary table for caloric and sleep groups combined
+summary_table <- personal_data %>%
+  group_by(sleep_group, caloric_group) %>% # grouping dat aby both sleep and caloric intake groups 
+  summarize(mean_miles_ran = round(mean(miles_ran, # calculating the mean of miles ran for each group, round to one decimal place 
+                                        na.rm = TRUE), 1)) %>% # ignoring NA values in the calculation 
+  ungroup() # removing grouping 
+
+# Use gt to create the table
+summary_table %>%
+  gt() %>%
+  tab_header(
+    title = "Mean Miles Ran by Sleep and Caloric Intake Group" # adding a title 
+  ) %>%
+  cols_label(
+    sleep_group = "Sleep Group", # renaming the column header 
+    caloric_group = "Caloric Intake Group", # renaming the column header 
+    mean_miles_ran = "Mean Miles Ran" # renaming the column header 
+  ) %>%
+  fmt_number(
+    columns = c(mean_miles_ran), # identifying particular column we want to format 
+    decimals = 2 # format the mean miles ran column to show two decimal places 
+  )
+```
 
