@@ -6,7 +6,7 @@ link: https://github.com/katefrankland/homework3.git
 ---
 
 ```{r, message = FALSE}
-
+library(fs) # used to create file structure 
 library(tidyverse)
 library(here)
 library(gt)
@@ -25,7 +25,7 @@ This comparison is informative as it could help me gauge the conditions under wh
 
 (b) Visualization
 
-```{r}
+```{r, message = FALSE}
 #cleaning data 
 personal_data <- read_csv(here("data", "ES193DS_running_data .csv")) # read in the data 
 personal_data <- personal_data %>% #cleaning the data 
@@ -92,6 +92,8 @@ caloric_summary <- personal_data %>%
 
 
 ```{r}
+clean_data <- personal_data %>%
+  filter(!is.na(miles_ran), !is.na(caloric_group))
 
 ggplot(personal_data, #create the plot using personal data 
        aes(x = sleep_group, # set the x axis to the sleep group 
@@ -155,14 +157,15 @@ ggplot(personal_data, # using personal data
 caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.
 
 ```{r}
-```{r}
-# Create a summary table for caloric and sleep groups combined
 summary_table <- personal_data %>%
-  group_by(sleep_group, caloric_group) %>% # grouping dat aby both sleep and caloric intake groups 
-  summarize(mean_miles_ran = round(mean(miles_ran, # calculating the mean of miles ran for each group, round to one decimal place 
-                                        na.rm = TRUE), 1)) %>% # ignoring NA values in the calculation 
-  ungroup() # removing grouping 
+  group_by(sleep_group, caloric_group) %>% 
+  summarize(mean_miles_ran = round(mean(miles_ran, na.rm = TRUE), 1),
+            .groups = "drop") 
+```
 
+
+```{r}
+```{r}
 # Use gt to create the table
 summary_table %>%
   gt() %>%
