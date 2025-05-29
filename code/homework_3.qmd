@@ -1,5 +1,23 @@
 ---
-title: "homework_3"
+title: "homework3"
 format: html
+editor: visual
+link:
 ---
 
+```{r}
+library(tidyverse)
+library(here)
+library(gt)
+library(janitor)
+library(readxl)
+library(ggplot2)
+```
+
+Problem 1
+
+(a) Data Summarizing
+
+For my data, I am interested in my response variable of the amount of miles ran, and how my mileage is influenced by the explanatory variables of caloric intake and sleep duration. I would like to take the mean of each of these explanatory variables, and then use the mean to determine levels of lower than average or higher than average caloric intake or sleep duration. I would then calculate the mean number of miles ran for each group.
+
+This comparison is informative as it could help me gauge the conditions under which I perform best, and help me further understand how fueling and rest influence my running performance.
