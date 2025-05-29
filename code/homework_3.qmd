@@ -21,3 +21,39 @@ Problem 1
 For my data, I am interested in my response variable of the amount of miles ran, and how my mileage is influenced by the explanatory variables of caloric intake and sleep duration. I would like to take the mean of each of these explanatory variables, and then use the mean to determine levels of lower than average or higher than average caloric intake or sleep duration. I would then calculate the mean number of miles ran for each group.
 
 This comparison is informative as it could help me gauge the conditions under which I perform best, and help me further understand how fueling and rest influence my running performance.
+
+(b) Visualization
+
+```{r}
+#cleaning data 
+personal_data <- read_csv(here("data", "ES193DS_running_data .csv")) # read in the data 
+personal_data <- personal_data %>% #cleaning the data 
+  clean_names()
+```
+
+```{r}
+# find the mean for sleep
+mean_sleep <- mean(personal_data$sleep_duration_hours, na.rm = TRUE) # calculating the mean for sleep, na.rm = TRUE is being used just in case there are NA values in the data 
+
+# filter the column for  above average sleep 
+above_avg_sleep <- personal_data %>% 
+  filter(sleep_duration_hours > mean_sleep) # creating a new data set where sleep is above average
+
+# filter the column for  below average sleep
+below_avg_sleep <- personal_data %>%
+  filter(sleep_duration_hours < mean_sleep) # creating a new data set where sleep is below the average
+```
+
+```{r}
+# find the mean for caloric intake 
+mean_calories <- mean(personal_data$caloric_intake, na.rm = TRUE) # calculating the mena f or sleep, na.rm = TRUE is being used just in case there are NA Values in the data 
+
+# filter for above average caloric intake 
+above_avg_caloric_intake <- personal_data %>% 
+  filter(caloric_intake > mean_calories) # creating a new data set where caloric intake is above average 
+
+# filter for below average caloric intake 
+below_avg_caloric_intake <- personal_data %>%
+  filter(caloric_intake < mean_calories) # creating a new data set where caloric intake is below average 
+
+```
