@@ -179,3 +179,8 @@ summary_table %>%
   )
 ```
 
+Problem 2
+
+(a) Describe in words when an affective visualization could look like for your personal data
+
+For my personal data, I believe that an affective visualization could look like a weekly timeline or calendar, with each day a different shape depending on if I ran or not; another option would be to have the days in the shapes of clouds or suns depending on the weather outside. Considering that I am using sleep and caloric intake to understand my mileage, a visualization using a color or heat gradient could be used as well to better understand the relationship between sleep, calorie intake, and performance, creating a visualization that is more visually engaging.
