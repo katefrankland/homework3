@@ -54,6 +54,36 @@ above_avg_caloric_intake <- personal_data %>%
 
 # filter for below average caloric intake 
 below_avg_caloric_intake <- personal_data %>%
-  filter(caloric_intake < mean_calories) # creating a new data set where caloric intake is below average 
-
+  filter(caloric_intake < mean_calories) # creating a new data set where caloric intake is below average
 ```
+
+
+```{r}
+#group sleep data 
+personal_data <- personal_data %>% 
+  mutate(sleep_group = if_else(sleep_duration_hours > mean_sleep, # using mutate to create 'sleep_group'
+                               "Above Average Sleep", # if sleep is greater than the mean sleep and is TRUE, it will be above average sleep 
+                               "Below Average Sleep")) # if sleep is less than the mean sleep, it will be FALSE, and  will be below average sleep 
+```
+
+```{r}
+#group calorie data
+personal_data <- personal_data %>%
+  mutate(caloric_group = if_else(caloric_intake > mean_calories, # using mutate to create 'caloric_group'
+                                 "Above Average Calories", # If caloric intake is greater than the mean calories and is TRUE, it will be labeled as "Above Average Calories"
+                                 "Below Average Calories")) # If caloric intake is lower than the mean calories, it will be FALSE and labeled as "Below Average Calories"
+```
+
+
+```{r}
+# summarize by group 
+sleep_summary <- personal_data %>% # create sleep_summary table 
+  group_by(sleep_group) %>% # group data by the sleep_group column that was previously created 
+  summarize(mean_miles_ran = mean(miles_ran, # calculate the mean of miles_ran for between groups 
+                                  na.rm = TRUE)) # ignoring any NA values 
+
+# creating a summary for calorie_summary
+caloric_summary <- personal_data %>%
+  group_by(caloric_group) %>% # group data by the caloric_group column
+  summarize(mean_miles_ran = mean(miles_ran, # calculate the mean of miles_ran between groups 
+                                  na.rm = TRUE)) # ignoring any NA values
