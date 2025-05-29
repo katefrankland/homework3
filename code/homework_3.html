@@ -191,14 +191,62 @@ time (1): time
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Above Average Calories"</span>, <span class="co"># If caloric intake is greater than the mean calories and is TRUE, it will be labeled as "Above Average Calories"</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Below Average Calories"</span>)) <span class="co"># If caloric intake is lower than the mean calories, it will be FALSE and labeled as "Below Average Calories"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="summarize-by-group" class="level1">
-<h1>summarize by group</h1>
-<p>sleep_summary &lt;- personal_data %&gt;% # create sleep_summary table group_by(sleep_group) %&gt;% # group data by the sleep_group column that was previously created summarize(mean_miles_ran = mean(miles_ran, # calculate the mean of miles_ran for between groups na.rm = TRUE)) # ignoring any NA values</p>
-</section>
-<section id="creating-a-summary-for-calorie_summary" class="level1">
-<h1>creating a summary for calorie_summary</h1>
-<p>caloric_summary &lt;- personal_data %&gt;% group_by(caloric_group) %&gt;% # group data by the caloric_group column summarize(mean_miles_ran = mean(miles_ran, # calculate the mean of miles_ran between groups na.rm = TRUE)) # ignoring any NA values</p>
-</section>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize by group </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sleep_summary <span class="ot">&lt;-</span> personal_data <span class="sc">%&gt;%</span> <span class="co"># create sleep_summary table </span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sleep_group) <span class="sc">%&gt;%</span> <span class="co"># group data by the sleep_group column that was previously created </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_miles_ran =</span> <span class="fu">mean</span>(miles_ran, <span class="co"># calculate the mean of miles_ran for between groups </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co"># ignoring any NA values </span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a summary for calorie_summary</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>caloric_summary <span class="ot">&lt;-</span> personal_data <span class="sc">%&gt;%</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(caloric_group) <span class="sc">%&gt;%</span> <span class="co"># group data by the caloric_group column</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_miles_ran =</span> <span class="fu">mean</span>(miles_ran, <span class="co"># calculate the mean of miles_ran between groups </span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co"># ignoring any NA values </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(personal_data, <span class="co">#create the plot using personal data </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> sleep_group, <span class="co"># set the x axis to the sleep group </span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> miles_ran, <span class="co"># set the y axis to the miles ran </span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> sleep_group)) <span class="sc">+</span> <span class="co"># fill color will be determined based on sleep group </span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="co"># creating a boxplot, making boxplots a little transparent with alpha </span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> <span class="co"># removing outliers </span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="co"># adding jitter plots, spreading horizontally </span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="co"># alpha is used tor transparency </span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="co"># coloring the jitter points </span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"lightblue"</span>, <span class="st">"lightgreen"</span>)) <span class="sc">+</span> <span class="co"># customizing colors </span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co">#adding titles and axis titles </span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Miles Ran by Sleep Duration Group"</span>, <span class="co"># plot title </span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sleep Duration Group"</span>, <span class="co"># x axis label </span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Miles Ran"</span> <span class="co"># y axis label </span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># use a minimal theme </span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span> <span class="co"># remove the legend </span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>), <span class="co"># center the plot title </span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), <span class="co"># increase the font size </span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>) <span class="co"># increase the font size </span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>        ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 21 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 21 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_3_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.</p>
 
 </main>
 <!-- /main column -->

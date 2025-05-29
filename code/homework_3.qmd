@@ -86,4 +86,37 @@ sleep_summary <- personal_data %>% # create sleep_summary table
 caloric_summary <- personal_data %>%
   group_by(caloric_group) %>% # group data by the caloric_group column
   summarize(mean_miles_ran = mean(miles_ran, # calculate the mean of miles_ran between groups 
-                                  na.rm = TRUE)) # ignoring any NA values
+                                  na.rm = TRUE)) # ignoring any NA values 
+```
+
+
+```{r}
+
+ggplot(personal_data, #create the plot using personal data 
+       aes(x = sleep_group, # set the x axis to the sleep group 
+           y = miles_ran, # set the y axis to the miles ran 
+           fill = sleep_group)) + # fill color will be determined based on sleep group 
+  
+  geom_boxplot(alpha = 0.6, # creating a boxplot, making boxplots a little transparent with alpha 
+               outlier.shape = NA) + # removing outliers 
+  
+  geom_jitter(width = 0.2, # adding jitter plots, spreading horizontally 
+              alpha = 0.4, # alpha is used tor transparency 
+              color = "black") + # coloring the jitter points 
+  
+  scale_fill_manual(values = c("lightblue", "lightgreen")) + # customizing colors 
+  
+  labs( #adding titles and axis titles 
+    title = "Miles Ran by Sleep Duration Group", # plot title 
+    x = "Sleep Duration Group", # x axis label 
+    y = "Miles Ran" # y axis label 
+  ) +
+  theme_minimal() + # use a minimal theme 
+  theme(legend.position = "none") + # remove the legend 
+  theme(plot.title = element_text(hjust = 0.5), # center the plot title 
+          axis.title.x = element_text(size = 12), # increase the font size 
+          axis.title.y = element_text(size = 12) # increase the font size 
+        ) 
+```
+
+caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.
