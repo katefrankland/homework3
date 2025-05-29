@@ -2,10 +2,11 @@
 title: "homework3"
 format: html
 editor: visual
-link:
+link: https://github.com/katefrankland/homework3.git
 ---
 
-```{r}
+```{r, message = FALSE}
+
 library(tidyverse)
 library(here)
 library(gt)
