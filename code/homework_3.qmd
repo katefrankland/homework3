@@ -201,4 +201,13 @@ Problem 3
 
 (a) Revisit and Summarize 
 
-![Statistical Critique Figure](Figure_3_Statistical_Critique.png)
+![Statistical Critique Figure](Figure_3_ES193_Statistical_Critique.png)
+A multiple linear regression is used; the response variable is the dolphin encounter rate which is measured as the number of dolphins per kilometer surveyed. The predictor variables are the water temperature (C), salinity (ppt), and the interaction between the water temperature and salinity.
+
+(b) Visual Clarity 
+
+Figure 3 on this critique has clear axes displaying temperature vs predicted encounter rates, and salinity vs predicted encounter rates (dolphins/km), with a breakpoint line at 23.37 degrees Celsius. The axes are positioned logically, and the solid lines for model predictions are clearly visible. However, there is an absense of confidence intervals and summary statistics that could be insightful for the reader to assess the fit of the model.
+
+(c) Aesthetic Clarity 
+
+I would describe this figure as having a high data to ink ratio. The figure is minimal, but some key components are difficult to see and understand. For example, each tick on the x axis represents an observation, but the tick marks are very small, making it challenging to get a full idea of the amount of observations that were collected. Additional small details that should be considered include the font size on the axes, which makes the figure difficult to read. 
