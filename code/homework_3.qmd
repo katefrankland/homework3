@@ -120,3 +120,37 @@ ggplot(personal_data, #create the plot using personal data
 ```
 
 caption - Figure 1: This figure is displaying the distribution of miles ran based on two groups of sleep data; either below oe above average. This boxplot can help visualize how I perform with different amounts of rest.
+
+```{r}
+```{r}
+ggplot(personal_data, # using personal data 
+       aes(x = caloric_group, # set the x axis to caloric group 
+           y = miles_ran, # set the y axis to miles ran 
+           fill = caloric_group)) + # fill color determined by group 
+  
+  geom_boxplot(alpha = 0.6, # creating a boxplot, making them a little transparent with alpha 
+               outlier.shape = NA) + # removing outliers 
+  
+  geom_jitter(width = 0.2, # adding jitter points, spreading horizontally 
+              alpha = 0.4, # alpha is used for transparency 
+              color = "black") + # coloring the jitter points 
+  
+  scale_fill_manual(values = c("lavender", "pink")) + # customizing colors 
+  
+  labs(
+    title = "Miles Ran by Caloric Intake Group", # plot title 
+    x = "Caloric Intake Group", # x axis label 
+    y = "Miles Ran" # y axis label 
+  ) +
+  
+  theme_minimal() + # use a minimal theme 
+  theme(legend.position = "none") + 
+  theme(plot.title = element_text(hjust = 0.5), # center the title 
+          axis.title.x = element_text(size = 12), # increase the font size 
+          axis.title.y = element_text(size = 12) # increase the font size 
+        ) 
+```
+
+caption - Figure 2: This boxplot displays distribution of miles ran based on two caloric intake groups, either an above or below average daily intake, with each point representing an individual day of data. This plot suggests that there is a slight correlation between days with higher caloric in takee and higher mileage, although there is some variability.
+
+
