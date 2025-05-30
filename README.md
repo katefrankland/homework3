@@ -57,6 +57,11 @@ File Structure:
 │   └── ES193DS_running_data .csv
 └── homework3.Rproj
 ```
-- All code should be in the code folder 
 
+<<<<<<< HEAD
 Here is the rendered html: file:///Users/katefrankland/ENVS-193DS/homework3/homework3/code/homework_3.html
+=======
+file:///Users/katefrankland/ENVS-193DS/homework3/homework3/code/homework_3.html
+
+
+>>>>>>> 6e2dd52 (rendering)
