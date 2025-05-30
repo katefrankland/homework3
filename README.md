@@ -58,10 +58,4 @@ File Structure:
 └── homework3.Rproj
 ```
 
-<<<<<<< HEAD
-Here is the rendered html: file:///Users/katefrankland/ENVS-193DS/homework3/homework3/code/homework_3.html
-=======
-file:///Users/katefrankland/ENVS-193DS/homework3/homework3/code/homework_3.html
-
-
->>>>>>> 6e2dd52 (rendering)
+html link: https://katefrankland.github.io/homework3/
