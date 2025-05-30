@@ -9,7 +9,7 @@ execute:
   message: false
   warning: false
 ---
- [https://github.com/katefrankland/homework3.git](https://github.com/katefrankland/homework3.git)
+ [github link](https://github.com/katefrankland/homework3.git)
 
 ---
 
