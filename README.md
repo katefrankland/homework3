@@ -58,4 +58,4 @@ File Structure:
 └── homework3.Rproj
 ```
 
-html link: https://katefrankland.github.io/homework3/
+html link: https://katefrankland.github.io/homework3/code/homework_3.html
